@@ -1,20 +1,10 @@
-"""
-THE WAR CARD GAME:
-Programming assignment for Intel Interview.
-Author : Harini Gowdagere Tulaisdas
-
-Assumptions : 1. Suit doesnt matter
-
-List extend is used to add the card to the bottom of the deck.
-
-
-"""
 import random
 
-player1_pile = []
-player2_pile = []
+war_cards = []
 Player1Deck = []
 Player2Deck = []
+# Player1Deck = ['3','6','4', '4','2', '3','6','4']
+# Player2Deck = ['9','2','4', '4','8', '9','K','4']
 card_values = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A')
 winner = ""
 war = False
@@ -25,85 +15,63 @@ def PrepareDeck():
     """
     deck = [val for val in card_values for i in range(4)]
     random.shuffle(deck)
-    for i in range(52):
-        if i % 2 == 0:
-            Player1Deck.append(deck[i])
-        else:
-            Player2Deck.append(deck[i])
+    for i in range(26):
+        Player1Deck.append(deck.pop())
+        Player2Deck.append(deck.pop())
 
 
-def AtWar():
-    """
-    pops 4 cards from top of the both the decks and makes a pile of them
-    :return:
-    """
-    if len(Player1Deck) > 4 and len(Player2Deck) > 4:
-        for i in range(4):
-            player1_pile.append(Player1Deck.pop(0))
-            player2_pile.append(Player2Deck.pop(0))
-    print("Last card played after war :", " Player 1 : ", player1_pile[3] , " Player 2 : " , player2_pile[3])
-    CompareCards(player1_pile[3], player2_pile[3])
-
-
-
-def AdjustCardsAfterBattle(card1,card2,deck):
-    """
-
-    :param card1:
-    :param card2:
-    :param deck:
-    :return:
-    """
-    if war == False :
-        deck.extend(card1)
-        deck.extend(card2)
-
-def CompareCards(P1, P2):
-    """
-
-    :param P1:
-    :param P2:
-    :return:
-    """
+def CompareCards():
     global war
-    if card_values.index(P1) == card_values.index(P2):
-        print("Player 1 and Player 2 are at war!!")
+    status()
+    card1 = Player1Deck.pop(0)
+    card2 = Player2Deck.pop(0)
+    print("The cards played by each player : ")
+    print("Player 1  :  ", card1)
+    print("Player 2  :  ", card2)
+    game_cards = []
+    game_cards.append(card1)
+    game_cards.append(card2)
+    if card_values.index(card1) == card_values.index(card2):
+        print("at war")
         war = True
-        if len(Player1Deck) > 4 and len(Player2Deck) > 4:
-            AtWar()
-        else:
-            winner = "Player 1" if len(Player1Deck) > len(Player2Deck) else "Player 2"
-
-    if card_values.index(P1) > card_values.index(P2):
-        print("player 1 wins the round!!")
-        if war == False:
-            AdjustCardsAfterBattle(P1,P2,Player1Deck);
-        else:
-            player1_pile.extend(player2_pile)
-            Player1Deck.extend(player1_pile)
-            player1_pile.clear()
+        war_cards.extend(game_cards)
+        for i in range(3):
+            war_cards.append(Player1Deck.pop(0))
+            war_cards.append(Player2Deck.pop(0))
+        print("war cards : ", war_cards)
     else:
-        print("player 2 wins the round!!")
-        if war == False:
-            AdjustCardsAfterBattle(P1, P2, Player2Deck);
+        if card_values.index(card1) > card_values.index(card2):
+            print("player 1 wins the round!!")
+            print("value of war ", war)
+            if war:
+                Player1Deck.extend(war_cards)
+                war_cards.clear()
+                war = False
+            Player1Deck.extend(game_cards)
         else:
-            player2_pile.extend(player1_pile)
-            Player2Deck.extend(player2_pile)
-            player2_pile.clear()
+            print("player 2 wins the round!!")
+            print("game cards: ", game_cards)
+            if war:
+                Player2Deck.extend(war_cards)
+                war_cards.clear()
+                war = False
+            Player2Deck.extend(game_cards)
 
+
+def status():
+    print("Player 1 deck :")
+    print(Player1Deck)
+    print("Player 2 deck :")
+    print(Player2Deck)
+    print("Player 1 has :", len(Player1Deck), " cards")
+    print("Player 2 has :", len(Player2Deck), " cards")
 
 def WarGame():
     """
-
     :return:
     """
-    while len(Player1Deck) > 0 and len(Player2Deck) > 0:
-        card1 = Player1Deck.pop()
-        card2 = Player2Deck.pop()
-        print("The cards played by each player : ")
-        print("Player 1  :  ", card1)
-        print("Player 2  :  ", card2)
-        CompareCards(card1, card2)
+    while len(Player1Deck) > 3 and len(Player2Deck) > 3:
+        CompareCards()
 
 if __name__ == '__main__':
     """
@@ -111,9 +79,4 @@ if __name__ == '__main__':
     """
     """ The cards dealt to each player"""
     PrepareDeck()
-    # print("Player 1 Deck : ", Player1Deck)
-    # print("Player 2 Deck : ", Player2Deck)
     WarGame()
-
-
-

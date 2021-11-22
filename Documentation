@@ -17,7 +17,7 @@
          The Player with higher card value gets both the cards.
 
          If the cards have equal value, then there is a war.
-         During a war 3 cards from the both the Player's deck are removed and held in a list simulating
+         During a war 3 cards from the both the Player's deck are removed and stored in a list simulating
          facing down of cards.
          The game continues with the next card faced up. The player with higher card value, gets all the 10 cards which includes
          8 cards(2 cards which caused the war, 6 cards faced down during the war) and the two cards from the current game/battle.

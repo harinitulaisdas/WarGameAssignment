@@ -15,19 +15,20 @@ During each battle.
 import random
 
 CARD_VALUES = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A')
-
+SUITS = ("of ♣","of ♦","of ♥","of ♠")
+MAX_GAME_COUNT = 1000
 
 def PrepareDeck():
     """
     Generates the deck of cards, shuffles it before dealing them to the two players
     """
-    deck = [val for val in CARD_VALUES for i in range(4)]
-    random.shuffle(deck)
+    Deck = [(i,j) for i in CARD_VALUES for j in SUITS]
+    random.shuffle(Deck)
     player1_deck, player2_deck = [], []
     for i in range(26):
-        player1_deck.append(deck.pop(0))
-        player2_deck.append(deck.pop(0))
-    return player1_deck, player2_deck
+        player1_deck.append(Deck.pop(0))
+        player2_deck.append(Deck.pop(0))
+    return  player1_deck,player2_deck
 
 
 def DecideWinner():
@@ -36,10 +37,11 @@ def DecideWinner():
     :return:
     """
     print('*' * 20, "WAR ENDS!!", '*' * 23)
-    print("Players have exhausted all the cards")
+    print("Players do not have minimum number of cards needed to play")
     print("Player 1 has :", len(player1_deck), " cards")
     print("Player 2 has :", len(player2_deck), " cards")
     winner = "Player 1" if len(player1_deck) > len(player2_deck) else "Player 2 "
+    print("The game was played :", str(games_played), " number of times")
     print("The winner is :", winner)
     print('*' * 55)
 
@@ -61,7 +63,11 @@ def WarGame():
     the player has enough cards in case of a war situation, i.e. face down 3 cards and face up one card.
 
     """
-    while len(player1_deck) > 4 and len(player2_deck) > 4:
+    rounds = 0
+    while len(player1_deck) > 4 and len(player2_deck) > 4 and rounds < MAX_GAME_COUNT:
+        rounds+=1
+        print("Player 1 has :", len(player1_deck), " cards")
+        print("Player 2 has :", len(player2_deck), " cards")
         global war
         card1 = player1_deck.pop(0)
         card2 = player2_deck.pop(0)
@@ -75,7 +81,7 @@ def WarGame():
         game_cards.append(card1)
         game_cards.append(card2)
         # check if there is a war
-        if CARD_VALUES.index(card1) == CARD_VALUES.index(card2):
+        if CARD_VALUES.index(card1[0]) == CARD_VALUES.index(card2[0]):
             print('*' * 17, "Players are at WAR!!", '*' * 17)
             war = True
             war_cards.extend(game_cards)
@@ -83,8 +89,8 @@ def WarGame():
                 war_cards.append(player1_deck.pop(0))
                 war_cards.append(player2_deck.pop(0))
         else:
-            if CARD_VALUES.index(card1) > CARD_VALUES.index(card2):
-                print('*' * 3, "Player 1 wins the round and gets all the cards!!", '*' * 3)
+            if CARD_VALUES.index(card1[0]) > CARD_VALUES.index(card2[0]):
+                print( "Player 1 wins the round and gets all the cards!!")
                 if war:
                     player1_deck.extend(war_cards)
                     war_cards.clear()
@@ -97,7 +103,7 @@ def WarGame():
                     war_cards.clear()
                     war = False
                 player2_deck.extend(game_cards)
-
+    return rounds
 
 def Status():
     """
@@ -121,5 +127,6 @@ if __name__ == '__main__':
     player1_deck, player2_deck = PrepareDeck()
     # war : to hold the status if there was a war.
     war = False
-    WarGame()
+    #A counter to keep track of number of times the game is played.
+    games_played = WarGame()
     DecideWinner()

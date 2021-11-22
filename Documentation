@@ -3,14 +3,14 @@
  The game is developed following the rules defined here :
  https://en.wikipedia.org/wiki/War_(card_game)
 
- Program structure in simple words:
+ Program Logic and Structure in simple words:
 
-1. Prepare the deck for each player by generating 52 cards. The suits are ignored as they do not hold any significance
- in the game. There are 13 cards ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A') and 4 copies of each
- card in the deck.
+1. Prepare the deck for each player by generating 52 cards. The suits are ignored in the logic of the game as they do not
+   hold any significance in the game. There are 13 card values ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A') and
+   4 suits given by SUITS = ("of ♣","of ♦","of ♥","of ♠"). The 52 cards are generated randomly and shuffled before dealing.
 
-2. The Deck is divided amongst two palyer by alternating the elements to simulate dealing of cards. Each Player gets a deck
- of 26 cards to play.
+2. The Deck is divided amongst two players by alternating the elements simulating the dealing of cards. Each Player gets a deck
+   of 26 cards to play.
 
 3. At every round of the game/battle, the top element of each Player's decks are compared to each other.
 
@@ -25,17 +25,26 @@
  since 3 cards are faced down and 1 card is faced up during a war. This ensures game ends when one of the players
  have exhausted minimum number of cards needed to play the game.
 
+4.  The game is played for a maximum of 1000 times. This ensures that the game ends when a situation of infinite loop
+    arises.
+
 
  Corner cases addressed:
 
- 1.Minimum number of cards needed to play the game.
- 2.Two consecutive war situation.
+     1.Minimum number of cards needed to play the game.
+     2.Two consecutive war situation.
+     3.Infinite loop situation when each player wins every other round of the game preventing the game to end.
+       The maximum number of times the game is played is set to 1000.
 
- A utility method Status is provided to check the status of the cards at any point in the game.It shows the cards on the deck
- ,the cards in the war_cards list. The total number of cards at anytime in the game is given by number of cards in each player's
- deck and the cards on the table(war_cards, game_cards) which sums to 52.
+     A utility method Status is provided to check the status of the cards at any point in the game.It shows the cards on the deck
+     ,the cards in the war_cards list. The total number of cards at anytime in the game is given by number of cards in each player's
+     deck and the cards on the table(war_cards, game_cards) which sums to 52.
 
 
+ Future enchancements.
+     If there was more time I would attempt doing it using OOPs principles and also add front end logic to simulate the game.
+     There are more versions of the game which uses suits along with the card values to decide the higher value card. I would
+     like to include those to make the game more interesting.
 
 
 

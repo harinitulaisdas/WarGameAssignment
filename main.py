@@ -14,7 +14,7 @@ During each battle.
 """
 import random
 
-CARD_VALUES = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A')
+CARD_VALUES = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A')
 SUITS = ("of ♣","of ♦","of ♥","of ♠")
 MAX_GAME_COUNT = 1000
 

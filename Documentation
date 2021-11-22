@@ -17,9 +17,10 @@
          The Player with higher card value gets both the cards.
 
          If the cards have equal value, then there is a war.
-         During a war 3 cards from the both the Player's deck are removed and held in a list.
-         The game continues with the next card. The player with higher card value at the draw, get all the cards which includes
-         8 cards from the war_cards list and the two cards at the current round.
+         During a war 3 cards from the both the Player's deck are removed and held in a list simulating
+         facing down of cards.
+         The game continues with the next card faced up. The player with higher card value, gets all the 10 cards which includes
+         8 cards(2 cards which caused the war, 6 cards faced down during the war) and the two cards from the current game/battle.
 
  The game is played until each player has atleast 4 cards. The minimum number of cards required to play is set as 4
  since 3 cards are faced down and 1 card is faced up during a war. This ensures game ends when one of the players
@@ -47,4 +48,518 @@
      like to include those to make the game more interesting.
 
 
+
+ Sample Output:
+******************Welcome to the game of WAR*********************************
+Player 1 has : 26  cards
+Player 2 has : 26  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('2', 'of ♦')
+Player 2  :   ('5', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 25  cards
+Player 2 has : 27  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('9', 'of ♣')
+Player 2  :   ('8', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 26  cards
+Player 2 has : 26  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('7', 'of ♠')
+Player 2  :   ('7', 'of ♣')
+*******************************************************
+***************** Players are at WAR!! *****************
+Player 1 has : 22  cards
+Player 2 has : 22  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('K', 'of ♥')
+Player 2  :   ('A', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 21  cards
+Player 2 has : 31  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('J', 'of ♠')
+Player 2  :   ('4', 'of ♦')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 22  cards
+Player 2 has : 30  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('7', 'of ♦')
+Player 2  :   ('4', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 23  cards
+Player 2 has : 29  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('10', 'of ♦')
+Player 2  :   ('10', 'of ♠')
+*******************************************************
+***************** Players are at WAR!! *****************
+Player 1 has : 19  cards
+Player 2 has : 25  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('5', 'of ♣')
+Player 2  :   ('A', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 18  cards
+Player 2 has : 34  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('A', 'of ♣')
+Player 2  :   ('6', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 19  cards
+Player 2 has : 33  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('3', 'of ♠')
+Player 2  :   ('5', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 18  cards
+Player 2 has : 34  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('2', 'of ♣')
+Player 2  :   ('8', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 17  cards
+Player 2 has : 35  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('10', 'of ♥')
+Player 2  :   ('J', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 16  cards
+Player 2 has : 36  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('2', 'of ♥')
+Player 2  :   ('Q', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 15  cards
+Player 2 has : 37  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('6', 'of ♦')
+Player 2  :   ('4', 'of ♣')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 16  cards
+Player 2 has : 36  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('3', 'of ♣')
+Player 2  :   ('9', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 15  cards
+Player 2 has : 37  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('9', 'of ♥')
+Player 2  :   ('5', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 16  cards
+Player 2 has : 36  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♥')
+Player 2  :   ('Q', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 15  cards
+Player 2 has : 37  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('6', 'of ♣')
+Player 2  :   ('J', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 14  cards
+Player 2 has : 38  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('9', 'of ♦')
+Player 2  :   ('7', 'of ♥')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 15  cards
+Player 2 has : 37  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('K', 'of ♦')
+Player 2  :   ('J', 'of ♥')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 16  cards
+Player 2 has : 36  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('9', 'of ♣')
+Player 2  :   ('2', 'of ♦')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 17  cards
+Player 2 has : 35  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♠')
+Player 2  :   ('5', 'of ♦')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 18  cards
+Player 2 has : 34  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('J', 'of ♠')
+Player 2  :   ('7', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 19  cards
+Player 2 has : 33  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('4', 'of ♦')
+Player 2  :   ('7', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 18  cards
+Player 2 has : 34  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('7', 'of ♦')
+Player 2  :   ('A', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 17  cards
+Player 2 has : 35  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('4', 'of ♠')
+Player 2  :   ('3', 'of ♥')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 18  cards
+Player 2 has : 34  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('A', 'of ♣')
+Player 2  :   ('8', 'of ♦')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 19  cards
+Player 2 has : 33  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('6', 'of ♠')
+Player 2  :   ('K', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 18  cards
+Player 2 has : 34  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('6', 'of ♦')
+Player 2  :   ('4', 'of ♥')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 19  cards
+Player 2 has : 33  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('4', 'of ♣')
+Player 2  :   ('Q', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 18  cards
+Player 2 has : 34  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('9', 'of ♥')
+Player 2  :   ('K', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 17  cards
+Player 2 has : 35  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('5', 'of ♠')
+Player 2  :   ('A', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 16  cards
+Player 2 has : 36  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('9', 'of ♦')
+Player 2  :   ('10', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 15  cards
+Player 2 has : 37  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('7', 'of ♥')
+Player 2  :   ('10', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 14  cards
+Player 2 has : 38  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('K', 'of ♦')
+Player 2  :   ('2', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 15  cards
+Player 2 has : 37  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('J', 'of ♥')
+Player 2  :   ('Q', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 14  cards
+Player 2 has : 38  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('9', 'of ♣')
+Player 2  :   ('K', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 13  cards
+Player 2 has : 39  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('2', 'of ♦')
+Player 2  :   ('6', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 12  cards
+Player 2 has : 40  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♠')
+Player 2  :   ('3', 'of ♦')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 13  cards
+Player 2 has : 39  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('5', 'of ♦')
+Player 2  :   ('10', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 12  cards
+Player 2 has : 40  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('J', 'of ♠')
+Player 2  :   ('5', 'of ♣')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 13  cards
+Player 2 has : 39  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('7', 'of ♠')
+Player 2  :   ('A', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 12  cards
+Player 2 has : 40  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('4', 'of ♠')
+Player 2  :   ('3', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 13  cards
+Player 2 has : 39  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('3', 'of ♥')
+Player 2  :   ('5', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 12  cards
+Player 2 has : 40  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('A', 'of ♣')
+Player 2  :   ('2', 'of ♣')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 13  cards
+Player 2 has : 39  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♦')
+Player 2  :   ('8', 'of ♣')
+*******************************************************
+***************** Players are at WAR!! *****************
+Player 1 has : 9  cards
+Player 2 has : 35  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('2', 'of ♠')
+Player 2  :   ('Q', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 8  cards
+Player 2 has : 44  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♠')
+Player 2  :   ('3', 'of ♣')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 9  cards
+Player 2 has : 43  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('3', 'of ♦')
+Player 2  :   ('9', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 8  cards
+Player 2 has : 44  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('J', 'of ♠')
+Player 2  :   ('8', 'of ♥')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 9  cards
+Player 2 has : 43  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('5', 'of ♣')
+Player 2  :   ('Q', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 8  cards
+Player 2 has : 44  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('4', 'of ♠')
+Player 2  :   ('6', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 7  cards
+Player 2 has : 45  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('3', 'of ♠')
+Player 2  :   ('J', 'of ♦')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 6  cards
+Player 2 has : 46  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('A', 'of ♣')
+Player 2  :   ('4', 'of ♦')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 7  cards
+Player 2 has : 45  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('2', 'of ♣')
+Player 2  :   ('7', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 6  cards
+Player 2 has : 46  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♠')
+Player 2  :   ('7', 'of ♦')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 7  cards
+Player 2 has : 45  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('3', 'of ♣')
+Player 2  :   ('A', 'of ♠')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 6  cards
+Player 2 has : 46  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('J', 'of ♠')
+Player 2  :   ('6', 'of ♠')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 7  cards
+Player 2 has : 45  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♥')
+Player 2  :   ('K', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 6  cards
+Player 2 has : 46  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('A', 'of ♣')
+Player 2  :   ('4', 'of ♣')
+*******************************************************
+Player 1 wins the round and gets all the cards!!
+Player 1 has : 7  cards
+Player 2 has : 45  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('4', 'of ♦')
+Player 2  :   ('Q', 'of ♣')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 6  cards
+Player 2 has : 46  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('8', 'of ♠')
+Player 2  :   ('9', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+Player 1 has : 5  cards
+Player 2 has : 47  cards
+******************** New Battle ***********************
+The cards played by each player :
+Player 1  :   ('7', 'of ♦')
+Player 2  :   ('K', 'of ♥')
+*******************************************************
+Player 2 wins the round and gets all the cards!!
+******************** WAR ENDS!! ***********************
+Players do not have minimum number of cards needed to play
+Player 1 has : 4  cards
+Player 2 has : 48  cards
+The game was played : 63  number of times
+The winner is : Player 2
+*******************************************************
 

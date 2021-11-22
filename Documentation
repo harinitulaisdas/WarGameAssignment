@@ -1,0 +1,41 @@
+                                               War card game.
+
+ The game is developed following the rules defined here :
+ https://en.wikipedia.org/wiki/War_(card_game)
+
+ Program structure in simple words:
+
+1. Prepare the deck for each player by generating 52 cards. The suits are ignored as they do not hold any significance
+ in the game. There are 13 cards ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A') and 4 copies of each
+ card in the deck.
+
+2. The Deck is divided amongst two palyer by alternating the elements to simulate dealing of cards. Each Player gets a deck
+ of 26 cards to play.
+
+3. At every round of the game/battle, the top element of each Player's decks are compared to each other.
+
+         The Player with higher card value gets both the cards.
+
+         If the cards have equal value, then there is a war.
+         During a war 3 cards from the both the Player's deck are removed and held in a list.
+         The game continues with the next card. The player with higher card value at the draw, get all the cards which includes
+         8 cards from the war_cards list and the two cards at the current round.
+
+ The game is played until each player has atleast 4 cards. The minimum number of cards required to play is set as 4
+ since 3 cards are faced down and 1 card is faced up during a war. This ensures game ends when one of the players
+ have exhausted minimum number of cards needed to play the game.
+
+
+ Corner cases addressed:
+
+ 1.Minimum number of cards needed to play the game.
+ 2.Two consecutive war situation.
+
+ A utility method Status is provided to check the status of the cards at any point in the game.It shows the cards on the deck
+ ,the cards in the war_cards list. The total number of cards at anytime in the game is given by number of cards in each player's
+ deck and the cards on the table(war_cards, game_cards) which sums to 52.
+
+
+
+
+

@@ -29,7 +29,6 @@
 4.  The game is played for a maximum of 1000 times. This ensures that the game ends when a situation of infinite loop
     arises.
 
-
  Corner cases addressed:
 
      1.Minimum number of cards needed to play the game.

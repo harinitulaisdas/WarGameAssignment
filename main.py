@@ -54,14 +54,10 @@ def WarGame():
     then there is a war. In case of a war, both the players place the next three cards face down and another card face-up. The player with
     higher face-up card wins the war and gets all the 10 cards.
 
-    Entry condition: The game is played when each player has atleast 4 cards since each player needs 4 cards during a war(3 face donw and one face up)
+    Entry condition: The game is played when each player has atleast 4 cards since each player needs 4 cards during a war(3 face down and one face up)
 
     winning criteria: The player with more cards on hand will be declared the winner. The cards on table arent considered during the
     decision.
-
-    The game is played when both the players have atleast 4 cards each. This is to ensure that
-    the player has enough cards in case of a war situation, i.e. face down 3 cards and face up one card.
-
     """
     rounds = 0
     while len(player1_deck) > 4 and len(player2_deck) > 4 and rounds < MAX_GAME_COUNT:
@@ -75,7 +71,7 @@ def WarGame():
         print("The cards played by each player : ")
         print("Player 1  :  ", card1)
         print("Player 2  :  ", card2)
-        print('*' * 55)
+        print('-' * 55)
         # game_cards [] - list to hold the cards played by each player at every battle/round of game.
         game_cards = []
         game_cards.append(card1)

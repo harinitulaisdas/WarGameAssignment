@@ -69,9 +69,11 @@ class Player():
 class Game:
     #war_cards : Holds the cards during a war(2 cards that caused a war, 3 cards from each player that were faced down)
     war_cards = []
+    game_count =0
     def __init__(self):
         """game cards: cards during the current round pf game. """
         self.game_cards = []
+
 
     def add_war_cards(self, cards):
         """Update the war cards list"""
@@ -97,6 +99,9 @@ class Game:
 def get_rank(card):
     """Return the value of the card."""
     return  CARD_VALUES.index(card[0])
+
+# def adjust_cards_after_war():
+
 
 def war_game():
     count = 0
@@ -130,14 +135,12 @@ def war_game():
                 print("Player 1 wins the round and gets all the cards!!")
                 if war:
                         Player1.update_war_count()
-                        print(WarGame.get_war_cards())
                         Player1.add_cards(WarGame.get_war_cards())
                         Player1.add_cards(WarGame.get_game_cards())
                         WarGame.clear_war_cards()
                         war = False
                         print('-' * 55)
                 else:
-                    print("game cards", WarGame.get_game_cards())
                     Player1.add_cards(WarGame.get_game_cards())
                     player_stat()
                     print('-' * 55)
@@ -151,7 +154,6 @@ def war_game():
                         war = False
                         print('-' * 55)
                 else:
-                    print("game cards", WarGame.get_game_cards())
                     Player2.add_cards(WarGame.get_game_cards())
                     player_stat()
                     print('-' * 55)
@@ -198,7 +200,7 @@ if __name__ == '__main__':
     print('-' * 55)
     print("Stats : ")
     player_stat()
-    print("The game was played :",count, " number of times")
+    print("The game was played :", count, " number of times")
     print(Player1.wars_won())
     print(Player2.wars_won())
     print('*' * 55)

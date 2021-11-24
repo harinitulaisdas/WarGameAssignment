@@ -100,7 +100,9 @@ def get_rank(card):
     """Return the value of the card."""
     return  CARD_VALUES.index(card[0])
 
-# def adjust_cards_after_war():
+# def adjust_cards_after_war(player):
+#     if player ==1 :
+#
 
 
 def war_game():

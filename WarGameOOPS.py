@@ -166,8 +166,8 @@ def player_stat():
     Print the number of cards held by each player.
     :return:
     """
-    print("Player {} has {} cards on hand".format(Player1.cards_on_hand(), Player1.get_name()))
-    print("Player {} has {} cards on hand".format(Player2.cards_on_hand(), Player2.get_name()))
+    print("Player {} has {} cards on hand".format(Player1.get_name(),Player1.cards_on_hand()))
+    print("Player {} has {} cards on hand".format(Player2.get_name(),Player2.cards_on_hand()))
 
 MAX_GAME_COUNT = 1000
 war = False

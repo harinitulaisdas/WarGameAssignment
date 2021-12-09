@@ -30,7 +30,7 @@ class Player():
         """
         :return: number of cards on hand
         """
-        return  len(self.deck)
+        return len(self.deck)
 
     def add_cards(self, card):
         """

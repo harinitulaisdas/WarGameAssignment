@@ -1,8 +1,4 @@
 """
-The war card game using python for Intel Interview.
-
-Author:Harini Gowdagere Tulaisdas
-
 Assumptions:
 Suits are ignored.
 The card values are used for comparison.
@@ -15,7 +11,7 @@ During each battle.
 import random
 
 CARD_VALUES = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A')
-SUITS = ("of ♣","of ♦","of ♥","of ♠")
+SUITS = (" ♣"," ♦"," ♥"," ♠")
 MAX_GAME_COUNT = 1000
 
 def PrepareDeck():
